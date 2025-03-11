@@ -22,7 +22,6 @@ export const getForms = async (req, res) => {
 export const updateForm = async (req, res) => {
     try {
       const { id } = req.params;
-      console.log("id",id,"data",req.body)
       const updatedForm = await Form.findByIdAndUpdate(id, req.body, { new: true });
       res.status(200).json(updatedForm);
     } catch (error) {
